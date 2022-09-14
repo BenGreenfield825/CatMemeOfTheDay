@@ -38,8 +38,3 @@ def write_to_screen(image_to_open):
     image = image.resize((320, 240))
     disp.image(image)
 
-
-# def loading_screen():
-#     image = Image.open("loading_screen.png")
-#     disp.image(image)
-

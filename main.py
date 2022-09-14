@@ -2,6 +2,8 @@ import os
 import random
 import display
 
+# I only sourced images from two different accounts, reformat loop to go through different paths
+# if more are added
 imageList = []
 for file in os.listdir('./kingcattos'):
     imageList.append('./kingcattos/' + file)
