@@ -35,6 +35,7 @@ def write_to_screen(image_to_open):
     disp.image(image)
 
     image = Image.open(image_to_open)
+    image = image.resize((320, 240))
     disp.image(image)
 
 
