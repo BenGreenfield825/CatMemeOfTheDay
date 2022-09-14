@@ -1,26 +1,25 @@
 import datetime
-
+from PIL import Image, ImageDraw, ImageShow
 import instaloader  # https://instaloader.github.io/as-module.html#python-module-instaloader
 from instaloader.structures import Profile
-import random
+import random, os
+import display
 
-L = instaloader.Instaloader()
-# ig = instaloader.Instaloader()
-# dp = input("Enter Insta username : ")
-#
-# ig.download_profile(dp, profile_pic_only=True)
+# kingcattos, cat.shitpost
 
-profile = Profile.from_username(L.context, "cat.shitpost")
-posts = profile.get_posts()
-totalPosts = posts.count
 
-randomPostNumber = random.randint(1, totalPosts)
-# list(posts)
-# print(profile.)
-L.download_pic("cattest", "https://www.instagram.com/p/CiYn0KsvRAq/?utm_source=ig_web_copy_link", datetime.datetime.now())
-# L.download_post(posts[randomPostNumber], "CatofTheDay")
+imageList = []
+for file in os.listdir('./kingcattos'):
+    imageList.append('./kingcattos/' + file)
+for file in os.listdir('./cat.shitpost'):
+    imageList.append('./cat.shitpost/' + file)
 
-# for posts in profile.get_posts():
-#     L.download_post(posts, "cat")
-#     break
+randomIndex = random.randint(0, len(imageList))
 
+# print(imageList)
+# print(imageList[randomIndex])
+
+image = Image.open(imageList[randomIndex])
+# image.show()
+
+display.write_to_screen(image)
